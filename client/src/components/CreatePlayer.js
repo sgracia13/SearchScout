@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios'
 
 export default class CreatePlayer extends Component{
    constructor(props) {
@@ -8,6 +9,7 @@ export default class CreatePlayer extends Component{
            player_name:'',
            player_position:'',
            player_notes:'',
+           player_evaluated:false
            
        }
    }
@@ -28,17 +30,30 @@ export default class CreatePlayer extends Component{
    })
 
    onSubmit = (e) => {
+    
     e.preventDefault(); 
 
     console.log(`player submitted:`);
     console.log(`player name: ${this.state.player_name}`)
     console.log(`player position: ${this.state.player_position}`)
     console.log(`player notes: ${this.state.player_notes}`)
+    console.log(`player evaluated: ${this.state.player_evaluated}`)
 
+    const newPlayer = {
+        player_name: this.state.player_name,
+        player_position:this.state.player_position,
+        player_notes:this.state.player_notes,
+        player_evaluated:this.state.player_evaluated
+    }
+
+    axios.post('http://localhost:4000/player/add', newPlayer)
+        .then(res => console.log(res.data))
+    
     this.setState({
             player_name:'',
             player_position:'',
            player_notes:'',
+           player_evaluated:false
            
     })
    }

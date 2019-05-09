@@ -2,8 +2,8 @@ const express = require ('express')
 const app = express();
 const bodyParser = require ('body-parser')
 const cors = require('cors');
-const playerRoutes=express.Router()
 const mongoose = require('mongoose');
+const playerRoutes=express.Router()
 const PORT = 4000;
 
 
@@ -56,20 +56,22 @@ playerRoutes.route('/add').post(function(req,res){
 })
 
 playerRoutes.route('/update/:id').post(function (req,res){
-    Player.findById(req.params.id), function(err, player){
+    Player.findById(req.params.id, function(err, player) {
         if(!player)
         res.status(404).send('data is not found')
         else
-            player.player_name = req.body.player_name
-            player.player_position = req.body.player_position
-            player.player_notes = req.body.player_notes
-        player.save().then(player => {
+            player.player_name = req.body.player_name;
+            player.player_position = req.body.player_position;
+            player.player_notes = req.body.player_notes;
+            player.player_evaluated =req.body.player_evaluated;
+        
+            player.save().then(player => {
             res.json('player updated')
         })
         .catch(err => {
             res.status(400).send('Update not possible')
         })
-        }
+        })
 
 })
 
