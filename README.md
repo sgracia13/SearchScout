@@ -10,7 +10,7 @@ It is imperative that they know weather conditions since baseball is an outdoor 
 
 # Schema  
 
-
+![Screen Shot 2019-06-16 at 12 39 34 AM](https://user-images.githubusercontent.com/47371676/59560010-01f03600-8fd0-11e9-8962-185d31af70ac.png)
 
 The application itself uses MongoDB to store all input data into collections. 
 The server is built using Node.js and Express. The code snippet above shows 
