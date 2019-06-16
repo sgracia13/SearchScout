@@ -1,4 +1,5 @@
-# SearchScout
+
+![Screen Shot 2019-06-16 at 12 52 55 AM](https://user-images.githubusercontent.com/47371676/59560079-34e6f980-8fd1-11e9-9576-701043c569af.png)
 
 # Built with MongoDB, Express.js, React, and Node.js
 
@@ -16,6 +17,8 @@ The application itself uses MongoDB to store all input data into collections.
 The server is built using Node.js and Express. The code snippet above shows 
 the exact schema used to model the player into the database using Mongoose. 
 
+
+# Server 
 
 
 
